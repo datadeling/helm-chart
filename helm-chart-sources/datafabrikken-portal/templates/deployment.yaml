@@ -23,98 +23,6 @@ spec:
       - env:
         - name: CONTAINER_IMAGE
           value: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
-        - name: NODE_ENV
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: NODE_ENV
-        - name: SEARCH_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_BASE_URI
-        - name: SEARCH_API_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_BASE_URI
-        - name: NAP_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: NAP_HOST
-        - name: SEARCH_API_AUTHORIZATION
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_API_AUTHORIZATION_KEY
-              optional: true
-        - name: USE_DEMO_LOGO
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: USE_DEMO_LOGO
-              optional: true
-        - name: SEARCH_FULLTEXT_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_FULLTEXT_SEARCH_BASE_URI
-        - name: CMS_API_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: CMS_API_BASE_URI
-        - name: ORGANIZATION_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ORGANIZATION_BFF_BASE_URI
-        - name: ORGANIZATION_CATALOGUE_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ORGANIZATION_CATALOGUE_HOST
-        - name: REPORT_API_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_REPORTS_BFF_BASE_URI
-        - name: METADATA_QUALITY_ASSESSMENT_API_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_METADATA_QUALITY_SERVICE_BASE_URI
-        - name: FDK_REGISTRATION_BASE_URI
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_REGISTRATION_BASE_URI
-        - name: ADMIN_GUI_BASE_URI
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ADMIN_GUI_BASE_URI
-        - name: INFORMATIONMODEL_HARVESTER_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_INFORMATIONMODEL_HARVESTER_BASE_URI
-        - name: FDK_LOGGING_FUNCTION_URI
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_LOGGING_FUNCTION_URI
-        - name: NAMESPACE
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: NAMESPACE
-        - name: FDK_COMMUNITY_BASE_URI
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_COMMUNITY_BASE_URI
         name: datafabrikken-portal
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
@@ -122,6 +30,6 @@ spec:
         - containerPort: 8080
         resources:
           requests:
-            memory: {{ required "Missing value FDK_PORTAL_MEMORY" .Values.FDK_PORTAL_MEMORY | quote }}
+            memory: {{ required "Missing value DATAFABRIKKEN_PORTAL_MEMORY" .Values.DATAFABRIKKEN_PORTAL_MEMORY | quote }}
       restartPolicy: Always
 status: {}
