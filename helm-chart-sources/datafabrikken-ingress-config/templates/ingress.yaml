@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ required "Missing value DATAFABRIKKEN_INGRESSNAME" .Values.DATAFABRIKKEN_INGRESSNAME }}
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.global-static-ip-name: {{ required "Missing value DATAFABRIKKEN_INGRESS_IP_NAME" .Values.DATAFABRIKKEN_INGRESS_IP_NAME }}
+spec:
+  rules:
+    http:
+      paths:
+        - path: /*
+          backend:
+            serviceName: datafabrikken-portal
+            servicePort: 8080
