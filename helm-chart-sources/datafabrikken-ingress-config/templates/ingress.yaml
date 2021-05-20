@@ -6,11 +6,13 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.global-static-ip-name: {{ required "Missing value DATAFABRIKKEN_INGRESS_IP_NAME" .Values.DATAFABRIKKEN_INGRESS_IP_NAME }}
+      ingress.gcp.kubernetes.io/pre-shared-cert: {{ required "Missing value DATAFABRIKKEN_ALL_CERT_NAMES" .Values.DATAFABRIKKEN_ALL_CERT_NAMES }}
 spec:
   rules:
-  - http:
-      paths:
-        - path: /*
-          backend:
-            serviceName: datafabrikken-portal
-            servicePort: 8080
+    - host: {{ required "Missing value HOSTNAME_DATAFABRIKKEN_PORTAL" .Values.HOSTNAME_DATAFABRIKKEN_PORTAL }}
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: datafabrikken-portal
+              servicePort: 8080
