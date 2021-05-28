@@ -3,7 +3,7 @@ entries:
   datafabrikken-portal:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-05-28T12:35:53.348553229+02:00"
+    created: "2021-05-28T13:13:37.870028029+02:00"
     description: Datafabrikken Portal
     digest: 3620e9023e73286a6ef5e0f31689218dfb4ef8f47a021bdc8807ae8a8b4ffc34
     home: https://github.com/datadeling/datafabrikken-portal
@@ -14,12 +14,12 @@ entries:
   ingress:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-05-28T12:35:53.348740054+02:00"
+    created: "2021-05-28T13:13:37.870203019+02:00"
     description: Config for Datafabrikken ingress
-    digest: 6b4ac2fe2b96cbb2c30c086b2719100e0f173ceda7d2b0647aa80d638de7eb3d
+    digest: 79a5d663feb0ba68432f5b488d4531311190492693cb63ef0d95033283a5b895
     home: https://github.com/datadeling/datafabrikken-ingress-config
     name: ingress
     urls:
     - https://datadeling.github.io/helm-chart/ingress-0.1.0.tgz
     version: 0.1.0
-generated: "2021-05-28T12:35:53.348156215+02:00"
+generated: "2021-05-28T13:13:37.869662464+02:00"
