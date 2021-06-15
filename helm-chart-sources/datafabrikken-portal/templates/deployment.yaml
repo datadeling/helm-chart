@@ -23,6 +23,21 @@ spec:
       - env:
         - name: CONTAINER_IMAGE
           value: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        - name: SEARCH_FULLTEXT_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_FULLTEXT_SEARCH_BASE_URI
+        - name: REFERENCE_DATA_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_PORTAL_BASE_URI
+        - name: FDK_PORTAL_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_PORTAL_BASE_URI
         name: datafabrikken-portal
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
