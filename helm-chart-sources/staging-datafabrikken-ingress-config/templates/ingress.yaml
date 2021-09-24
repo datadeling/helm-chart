@@ -15,4 +15,5 @@ spec:
         backend:
           service:
             name: datafabrikken-portal
-            port: 8080
+            port:
+              number: 8080
