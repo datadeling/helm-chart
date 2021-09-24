@@ -8,9 +8,10 @@ metadata:
     kubernetes.io/ingress.global-static-ip-name: {{ required "Missing value DATAFABRIKKEN_INGRESS_IP_NAME" .Values.DATAFABRIKKEN_INGRESS_IP_NAME }}
 spec:
   rules:
-    http:
+  - http:
       paths:
-        - path: /*
-          backend:
-            serviceName: datafabrikken-portal
-            servicePort: 8080
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          serviceName: datafabrikken-portal
+          servicePort: 8080
