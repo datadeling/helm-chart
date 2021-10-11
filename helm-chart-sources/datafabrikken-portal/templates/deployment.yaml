@@ -23,6 +23,11 @@ spec:
       - env:
         - name: CONTAINER_IMAGE
           value: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        - name: ENV
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: NAMESPACE
         - name: SEARCH_FULLTEXT_HOST
           valueFrom:
             secretKeyRef:
