@@ -73,6 +73,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_REPORTS_BFF_BASE_URI
+        - name: FDK_DATASET_PREVIEW_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_DATASET_PREVIEW_API_KEY
         name: datafabrikken-portal
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
