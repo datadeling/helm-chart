@@ -1,0 +1,14 @@
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  creationTimestamp: null
+  labels:
+    datafabrikken.service: datafabrikken-cms-backend
+  name: datafabrikken-cms-backend
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  iap:
+    enabled: {{ required "Missing value DATAFABRIKKEN_CMS_SERVICE_ENABLE_IAP" .Values.DATAFABRIKKEN_CMS_SERVICE_ENABLE_IAP }}
+    oauthclientCredentials:
+      secretName: {{ required "Missing value DATAFABRIKKEN_CMS_SERVICE_IAP_SECRETNAME" .Values.DATAFABRIKKEN_CMS_SERVICE_IAP_SECRETNAME }}
+status: {}

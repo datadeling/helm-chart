@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    datafabrikken.service: datafabrikken-cms-service
+  name: datafabrikken-cms-service
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  type: NodePort
+  ports:
+    - name: "1337"
+      port: 1337
+      targetPort: 1337
+    - name: "8080"
+      port: 8080
+      targetPort: 1337
+  selector:
+    datafabrikken.service: datafabrikken-cms-service
+status:
+  loadBalancer: {}

@@ -1,0 +1,5 @@
+#DValues for production environment
+NAMESPACE: prod
+DATAFABRIKKEN_CMS_SERVICE_VOLUMENAME: datafabrikken-prod-cms-service
+DATAFABRIKKEN_CMS_SERVICE_STORAGESIZE: 50G
+DATAFABRIKKEN_CMS_SERVICE_IAP_SECRETNAME: datafabrikken-cms-auth-prod

@@ -1,0 +1,32 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  creationTimestamp: null
+  labels:
+    app: datafabrikken-cms-service-claim0
+  name: datafabrikken-cms-service-claim0
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+        storageClassName: ""
+        volumeName: {{ required "Missing value DATAFABRIKKEN_CMS_SERVICE_VOLUMENAME" .Values.DATAFABRIKKEN_CMS_SERVICE_VOLUMENAME }}
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: {{ required "Missing value DATAFABRIKKEN_CMS_SERVICE_STORAGESIZE" .Values.DATAFABRIKKEN_CMS_SERVICE_STORAGESIZE }}
+status: {}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: {{ required "Missing value DATAFABRIKKEN_CMS_SERVICE_VOLUMENAME" .Values.DATAFABRIKKEN_CMS_SERVICE_VOLUMENAME }}
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  storageClassName: ""
+  capacity:
+    storage: {{ required "Missing value DATAFABRIKKEN_CMS_SERVICE_STORAGESIZE" .Values.DATAFABRIKKEN_CMS_SERVICE_STORAGESIZE }}
+  accessModes:
+    - ReadWriteOnce
+  gcePersistentDisk:
+    pdName: {{ required "Missing value DATAFABRIKKEN_CMS_SERVICE_VOLUMENAME" .Values.DATAFABRIKKEN_CMS_SERVICE_VOLUMENAME }}
+    fsType: ext4

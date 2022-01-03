@@ -1,0 +1,6 @@
+apiVersion: v1
+appVersion: "1.0"
+description: DATAFABRIKKEN CMS service
+name: datafabrikken-cms-service
+version: 0.1.0
+home: https://github.com/datadeling/datafabrikken-cms-service
