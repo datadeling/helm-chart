@@ -81,21 +81,6 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: PROJECT_NUMBER
-        - name: SMTP_SERVER
-          valueFrom:
-            secretKeyRef:
-              name: datafabrikken-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DATAFABRIKKEN_COMMUNITY_SERVICE_SMTP_SERVER
-        - name: SMTP_PORT
-          valueFrom:
-            secretKeyRef:
-              name: datafabrikken-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DATAFABRIKKEN_COMMUNITY_SERVICE_SMTP_PORT
-        - name: SMTP_HOSTNAME
-          valueFrom:
-            secretKeyRef:
-              name: datafabrikken-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DATAFABRIKKEN_COMMUNITY_SERVICE_SMTP_HOSTNAME
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: datafabrikken-cms-service
