@@ -14,6 +14,20 @@ spec:
       http:
         paths:
           - path: /*
+            pathType: ImplementationSpecific
             backend:
               serviceName: datafabrikken-portal
+              servicePort: 8080
+    - host: {{ required "Missing value HOSTNAME_DATAFABRIKKEN_CMS" .Values.HOSTNAME_DATAFABRIKKEN_CMS }}
+      http:
+        paths:
+          - path: /admin/*
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: datafabrikken-cms-service-admin
+              servicePort: 8080
+          - path: /*
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: datafabrikken-cms-service
               servicePort: 8080
