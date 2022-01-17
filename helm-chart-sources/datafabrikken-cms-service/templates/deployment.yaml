@@ -90,7 +90,7 @@ spec:
           requests:
             memory: {{ required "Missing value DATAFABRIKKEN_CMS_SERVICE_MEMORY" .Values.DATAFABRIKKEN_CMS_SERVICE_MEMORY | quote }}
         volumeMounts:
-          - mountPath: /public/uploads
+          - mountPath: /app/public/uploads
             name: datafabrikken-cms-service-claim0
       volumes:
         - name: datafabrikken-cms-service-claim0
