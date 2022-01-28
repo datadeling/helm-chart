@@ -88,6 +88,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_USER_FEEDBACK_SERVICE_BASE_URI
+        - name: OIDC_ISSUER
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SSO_OIDC_ISSUER
         name: datafabrikken-portal
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
