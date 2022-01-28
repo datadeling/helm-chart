@@ -3,7 +3,7 @@ entries:
   datafabrikken-cms-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-01-17T10:13:59.022541391+01:00"
+    created: "2022-01-28T11:11:11.77095593+01:00"
     description: DATAFABRIKKEN CMS service
     digest: 8f2720b424fbca307c70e9f2627cbfcc3d3e89bd49bc9136b2b6d6462ccbdbe0
     home: https://github.com/datadeling/datafabrikken-cms-service
@@ -14,12 +14,12 @@ entries:
   datafabrikken-portal:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-01-17T10:13:59.022730718+01:00"
+    created: "2022-01-28T11:11:11.771193376+01:00"
     description: Datafabrikken Portal
-    digest: 54359cf3e8d37594c3f0a7afc94769bd4cc3755bb21727c5d03c4a61c62a6248
+    digest: aa0332903579a098556bc57534c4e86da451c1143d57ed953f152fb2173c3465
     home: https://github.com/datadeling/datafabrikken-portal
     name: datafabrikken-portal
     urls:
     - https://datadeling.github.io/helm-chart/datafabrikken-portal-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-17T10:13:59.02217928+01:00"
+generated: "2022-01-28T11:11:11.767177446+01:00"

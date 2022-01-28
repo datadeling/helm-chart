@@ -83,6 +83,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DATAFABRIKKEN_CMS_BASE_URI
+        - name: FDK_USER_FEEDBACK_SERVICE_BASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_USER_FEEDBACK_SERVICE_BASE_URI
         name: datafabrikken-portal
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
