@@ -1,0 +1,121 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    datafabrikken.service: datafabrikken-portal-nextjs
+  name: datafabrikken-portal-nextjs
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      datafabrikken.service: datafabrikken-portal-nextjs
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        datafabrikken.service: datafabrikken-portal-nextjs
+    spec:
+      containers:
+      - env:
+        - name: CONTAINER_IMAGE
+          value: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        - name: ENV
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: NAMESPACE
+        - name: SEARCH_FULLTEXT_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_FULLTEXT_SEARCH_BASE_URI
+        - name: REFERENCE_DATA_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_PORTAL_BASE_URI
+        - name: FDK_PORTAL_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_PORTAL_BASE_URI
+        - name: CMS_API_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: DATAFABRIKKEN_CMS_API_BASE_URI
+        - name: COMMUNITY_API_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_COMMUNITY_BASE_URI
+        - name: METADATA_QUALITY_ASSESSMENT_API
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_METADATA_QUALITY_SERVICE_BASE_URI
+        - name: ORGANIZATION_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_ORGANIZATION_BFF_BASE_URI
+        - name: ORGANIZATION_CATALOGUE_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ORGANIZATION_CATALOGUE_HOST
+        - name: REPORT_API_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_REPORTS_BFF_BASE_URI
+        - name: FDK_DATASET_PREVIEW_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_DATASET_PREVIEW_API_KEY
+        - name: STRAPI_API_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: DATAFABRIKKEN_CMS_BASE_URI
+        - name: FDK_USER_FEEDBACK_SERVICE_BASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_USER_FEEDBACK_SERVICE_BASE_URI
+        - name: OIDC_ISSUER
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SSO_OIDC_ISSUER
+        name: datafabrikken-portal-nextjs
+        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: {{ required "Missing value DATAFABRIKKEN_PORTAL_MEMORY" .Values.DATAFABRIKKEN_PORTAL_MEMORY | quote }}
+        livenessProbe:
+          httpGet:
+            path: /ping
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 5
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 150
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 5
+      restartPolicy: Always
+status: {}
