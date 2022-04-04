@@ -23,52 +23,52 @@ spec:
       - env:
         - name: CONTAINER_IMAGE
           value: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
-        - name: ENV
+        - name: NEXT_PUBLIC_ENV
           valueFrom:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: NAMESPACE
-        - name: SEARCH_FULLTEXT_HOST
+        - name: NEXT_PUBLIC_SEARCH_FULLTEXT_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_FULLTEXT_SEARCH_BASE_URI
-        - name: REFERENCE_DATA_HOST
+        - name: NEXT_PUBLIC_REFERENCE_DATA_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_PORTAL_BASE_URI
-        - name: FDK_PORTAL_HOST
+        - name: NEXT_PUBLIC_FDK_PORTAL_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_PORTAL_BASE_URI
-        - name: CMS_API_HOST
+        - name: NEXT_PUBLIC_CMS_API_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DATAFABRIKKEN_CMS_API_BASE_URI
-        - name: COMMUNITY_API_HOST
+        - name: NEXT_PUBLIC_COMMUNITY_API_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_COMMUNITY_BASE_URI
-        - name: METADATA_QUALITY_ASSESSMENT_API
+        - name: NEXT_PUBLIC_METADATA_QUALITY_ASSESSMENT_API
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_METADATA_QUALITY_SERVICE_BASE_URI
-        - name: ORGANIZATION_HOST
+        - name: NEXT_PUBLIC_ORGANIZATION_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_ORGANIZATION_BFF_BASE_URI
-        - name: ORGANIZATION_CATALOGUE_HOST
+        - name: NEXT_PUBLIC_ORGANIZATION_CATALOGUE_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ORGANIZATION_CATALOGUE_HOST
-        - name: REPORT_API_HOST
+              key: ORGANIZATION_CATALOG_HOST
+        - name: NEXT_PUBLIC_REPORT_API_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
@@ -78,17 +78,17 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_DATASET_PREVIEW_API_KEY
-        - name: STRAPI_API_HOST
+        - name: NEXT_PUBLIC_STRAPI_API_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DATAFABRIKKEN_CMS_BASE_URI
-        - name: FDK_USER_FEEDBACK_SERVICE_BASE_URI
+        - name: NEXT_PUBLIC_FDK_USER_FEEDBACK_SERVICE_BASE_URI
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_USER_FEEDBACK_SERVICE_BASE_URI
-        - name: OIDC_ISSUER
+        - name: NEXT_PUBLIC_OIDC_ISSUER
           valueFrom:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
