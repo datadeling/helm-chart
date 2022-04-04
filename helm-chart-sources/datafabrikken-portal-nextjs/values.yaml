@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##datafabrikken-portal-nextjs
-DATAFABRIKKEN_PORTAL_MEMORY: "50Mi"
+DATAFABRIKKEN_PORTAL_MEMORY: "75Mi"
