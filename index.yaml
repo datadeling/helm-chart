@@ -3,7 +3,7 @@ entries:
   datafabrikken-cms-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-04-04T14:23:42.841241535+02:00"
+    created: "2022-04-04T14:29:03.424255808+02:00"
     description: DATAFABRIKKEN CMS service
     digest: 8f2720b424fbca307c70e9f2627cbfcc3d3e89bd49bc9136b2b6d6462ccbdbe0
     home: https://github.com/datadeling/datafabrikken-cms-service
@@ -14,9 +14,9 @@ entries:
   datafabrikken-portal:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-04-04T14:23:42.841788235+02:00"
+    created: "2022-04-04T14:29:03.424670408+02:00"
     description: Datafabrikken Portal
-    digest: a24edbda394bb7ca4ce15bbdf51c9348308371cd6ca43a9cb5596e51d1f413d5
+    digest: 97732083905fa0e1b07a2d931c8a4400371970711eea0f3dfd7a221d1bddf92c
     home: https://github.com/datadeling/datafabrikken-portal
     name: datafabrikken-portal
     urls:
@@ -25,7 +25,7 @@ entries:
   datafabrikken-portal-nextjs:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-04-04T14:23:42.842449634+02:00"
+    created: "2022-04-04T14:29:03.424996408+02:00"
     description: Datafabrikken Portal
     digest: cf78bee2e798473bd64802844615d91469e814231aca7aca33b6ddbf4656880d
     home: https://github.com/datadeling/datafabrikken-portal-nextjs
@@ -33,4 +33,4 @@ entries:
     urls:
     - https://datadeling.github.io/helm-chart/datafabrikken-portal-nextjs-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-04T14:23:42.831838834+02:00"
+generated: "2022-04-04T14:29:03.422419808+02:00"
