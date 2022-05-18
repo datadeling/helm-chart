@@ -1,0 +1,6 @@
+# Default values for datafabrikken-veiviser-dele-data.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+##datafabrikken-veiviser-dele-data
+DATAFABRIKKEN_VEIVISER_DELE_DATA_MEMORY: "50Mi"
