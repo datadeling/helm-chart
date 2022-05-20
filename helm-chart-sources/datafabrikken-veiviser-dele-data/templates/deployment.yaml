@@ -20,7 +20,7 @@ spec:
         datafabrikken.service: datafabrikken-veiviser-dele-data
     spec:
       containers:
-        name: datafabrikken-veiviser-dele-data
+      - name: datafabrikken-veiviser-dele-data
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         ports:
