@@ -103,7 +103,7 @@ spec:
             memory: {{ required "Missing value DATAFABRIKKEN_PORTAL_MEMORY" .Values.DATAFABRIKKEN_PORTAL_MEMORY | quote }}
         livenessProbe:
           httpGet:
-            path: /ping
+            path: /
             port: 8080
           initialDelaySeconds: 20
           periodSeconds: 30
@@ -111,7 +111,7 @@ spec:
           failureThreshold: 5
         readinessProbe:
           httpGet:
-            path: /ready
+            path: /
             port: 8080
           initialDelaySeconds: 150
           periodSeconds: 30
