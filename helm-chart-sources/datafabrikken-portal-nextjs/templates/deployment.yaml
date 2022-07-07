@@ -93,7 +93,7 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: SSO_OIDC_ISSUER
-        - name: DATAJEGER_EMAIL_ADDRESS
+        - name: NEXT_PUBLIC_DATAJEGER_EMAIL_ADDRESS
           valueFrom:
             secretKeyRef:
               name: datajeger-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}

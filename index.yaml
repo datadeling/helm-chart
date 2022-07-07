@@ -3,7 +3,7 @@ entries:
   datafabrikken-cms-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-07-01T10:53:36.58492855+02:00"
+    created: "2022-07-07T11:52:45.399951801+02:00"
     description: DATAFABRIKKEN CMS service
     digest: 8f2720b424fbca307c70e9f2627cbfcc3d3e89bd49bc9136b2b6d6462ccbdbe0
     home: https://github.com/datadeling/datafabrikken-cms-service
@@ -14,7 +14,7 @@ entries:
   datafabrikken-portal:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-07-01T10:53:36.585850288+02:00"
+    created: "2022-07-07T11:52:45.404658892+02:00"
     description: Datafabrikken Portal
     digest: a33c1f8265ab2907663d877f053d9cd73c0ddf2af2e9991eeb4202c2bcc31d8a
     home: https://github.com/datadeling/datafabrikken-portal
@@ -25,9 +25,9 @@ entries:
   datafabrikken-portal-nextjs:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-07-01T10:53:36.586379407+02:00"
+    created: "2022-07-07T11:52:45.406190725+02:00"
     description: Datafabrikken Portal
-    digest: 7977871bb50d3886acba913d40b9a8b085be02d3b670199d59b727b3259dcbeb
+    digest: c07bdb7e8cfefc6fafb5dd01a93348ba1dc0361e45a5a707d04353d93201be18
     home: https://github.com/datadeling/datafabrikken-portal-nextjs
     name: datafabrikken-portal-nextjs
     urls:
@@ -36,7 +36,7 @@ entries:
   datafabrikken-veiviser-dele-data:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-07-01T10:53:36.586838162+02:00"
+    created: "2022-07-07T11:52:45.406957621+02:00"
     description: Datafabrikken Veiviser Dele Data
     digest: bf43eff2389a0662ae02bbcd74df3c9f5829d42be30c90e03602ffe8beb7748c
     home: https://github.com/datadeling/datafabrikken-veiviser-dele-data
@@ -44,4 +44,4 @@ entries:
     urls:
     - https://datadeling.github.io/helm-chart/datafabrikken-veiviser-dele-data-0.1.0.tgz
     version: 0.1.0
-generated: "2022-07-01T10:53:36.583845293+02:00"
+generated: "2022-07-07T11:52:45.399111202+02:00"
