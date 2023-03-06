@@ -1,0 +1,5 @@
+#Values for staging environment
+NAMESPACE: staging
+DATAFABRIKKEN_CMS_SERVICE_VOLUMENAME: datafabrikken-staging-cms-service
+DATAFABRIKKEN_CMS_SERVICE_STORAGESIZE: 50G
+DATAFABRIKKEN_CMS_SERVICE_IAP_SECRETNAME: datafabrikken-cms-auth-staging
