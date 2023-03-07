@@ -70,17 +70,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: postgres-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: PASSWORD
-        - name: BACKEND_SERVICE_ID
-          valueFrom:
-            secretKeyRef:
-              name: datafabrikken-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: BACKEND_SERVICE_ID
-        - name: PROJECT_NUMBER
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: PROJECT_NUMBER
+              key: PASSWORD        
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: datafabrikken-cms-service
