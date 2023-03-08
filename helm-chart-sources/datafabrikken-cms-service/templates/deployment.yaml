@@ -26,6 +26,11 @@ spec:
             secretKeyRef:
               name: datafabrikken-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: ENABLE_IAP
+        - name: BASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: datafabrikken-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: BASE_URI        
         - name: NAMESPACE
           valueFrom:
             secretKeyRef:
