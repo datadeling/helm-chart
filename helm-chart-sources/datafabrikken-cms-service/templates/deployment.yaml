@@ -65,7 +65,17 @@ spec:
           valueFrom:
             secretKeyRef:
               name: datafabrikken-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: APP_KEYS      
+              key: APP_KEYS
+        - name: API_TOKEN_SALT
+          valueFrom:
+            secretKeyRef:
+              name: datafabrikken-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: API_TOKEN_SALT
+        - name: CORS_ORIGIN
+          valueFrom:
+            secretKeyRef:
+              name: datafabrikken-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: CORS_ORIGIN      
         - name: CONNECTION
           valueFrom:
             secretKeyRef:
