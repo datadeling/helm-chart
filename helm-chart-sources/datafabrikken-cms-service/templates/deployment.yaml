@@ -56,6 +56,11 @@ spec:
             secretKeyRef:
               name: datafabrikken-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: ADMIN_JWT_SECRET
+        - name: APP_KEYS
+          valueFrom:
+            secretKeyRef:
+              name: datafabrikken-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: APP_KEYS      
         - name: CONNECTION
           valueFrom:
             secretKeyRef:
