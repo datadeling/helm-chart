@@ -51,6 +51,11 @@ spec:
             secretKeyRef:
               name: datafabrikken-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: POSTGRES_DB_NAME
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: datafabrikken-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: JWT_SECRET
         - name: ADMIN_JWT_SECRET
           valueFrom:
             secretKeyRef:
